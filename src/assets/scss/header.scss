@@ -1,0 +1,73 @@
+@import "./variable";
+@import "./responsive";
+
+.header {
+  background-color: $primaryColor;
+
+  &__container {
+    margin: 0 14px;
+    padding: 20px 0 100px 0;
+
+    @include responsive(md) {
+      margin: 0 64px;
+    }
+
+    @include responsive(xl) {
+      margin: 0 104px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    @include responsive(lg) {
+      justify-content: flex-start;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin-right: 22px;
+      padding: 10px 16px;
+      cursor: pointer;
+      border: 1px solid $primaryColor;
+      border-radius: 10px;
+
+      @include responsive(lg) {
+        margin-right: 42px;
+      }
+
+      &.active {
+        border-color: #fff;
+      }
+
+      &:hover {
+        border-color: #fff;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    svg {
+      font-size: 20px;
+      color: #fff;
+
+      @include responsive(md) {
+        margin-right: 10px;
+      }
+    }
+
+    span {
+      display: none;
+      color: #fff;
+      text-transform: capitalize;
+
+      @include responsive(md) {
+        display: block;
+      }
+    }
+  }
+}
