@@ -3,6 +3,7 @@
 
 .header {
   background-color: $primaryColor;
+  position: relative;
 
   &__container {
     margin: 0 14px;
@@ -67,6 +68,141 @@
 
       @include responsive(md) {
         display: block;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 60px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 50px;
+
+    @include responsive(md) {
+      line-height: 38px;
+    }
+  }
+
+  &__desc {
+    margin-top: 24px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 28px;
+
+    @include responsive(md) {
+      line-height: 24px;
+    }
+  }
+
+  &__btn {
+    background: $secondaryColor;
+    color: #fff;
+    font-weight: 500;
+    padding: 14px 28px;
+    border: none;
+    margin-top: 28px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.7s;
+
+    &:hover {
+      background: darken($secondaryColor, 2%);
+    }
+  }
+
+  &-search {
+    min-height: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 3px solid $warningColor;
+    padding: 10px;
+    position: absolute;
+    bottom: -55px;
+    right: 0;
+    left: 0;
+    margin: 0 14px;
+    gap: 20px;
+
+    @include responsive(md) {
+      flex-direction: row;
+      margin: 0 64px;
+      bottom: -25px;
+    }
+
+    @include responsive(xl) {
+      margin: 0 104px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__input {
+      border: 0;
+      outline: 0;
+    }
+
+    &__text {
+      color: #888;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    &__icon {
+      color: lightgrey;
+      font-style: 18px;
+    }
+
+    &__date {
+      position: absolute;
+      top: 50px;
+    }
+
+    &__option {
+      position: absolute;
+      top: 50px;
+      background-color: #eee;
+      color: #888;
+      padding: 10px;
+      border-radius: 4px;
+
+      &--item {
+        width: 190px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+
+      &--item:last-child {
+        margin: 0;
+      }
+
+      &--content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      &--btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid $secondaryColor;
+        color: $secondaryColor;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: lighten($secondaryColor, 55%);
+        }
       }
     }
   }
